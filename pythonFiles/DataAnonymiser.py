@@ -1,15 +1,14 @@
 class DataAnonymiser:
     """
-    Anonymises SSIDs by removing identifiers or personal network names.
-    Ensures privacy-by-design compliance.
+    Placeholder anonymiser class.
+    Currently passes SSID data through without modification.
+    This keeps the project structure consistent while disabling anonymisation.
     """
 
     def anonymise(self, ssid_list):
-        cleaned = []
-        for ssid in ssid_list:
-            if any(keyword in ssid.lower() for keyword in ["home", "wifi", "guest", "personal", "family"]):
-                cleaned.append("AnonymisedNetwork")
-            else:
-                cleaned.append(ssid)
-        print(f"[DataAnonymiser] {len(cleaned)} SSIDs processed for anonymity.")
-        return cleaned
+        """
+        Returns SSIDs exactly as provided.
+        No filtering or renaming applied.
+        """
+        print(f"[DataAnonymiser] Skipping anonymisation — {len(ssid_list)} SSIDs returned unchanged.")
+        return ssid_list
