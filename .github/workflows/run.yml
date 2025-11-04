@@ -27,3 +27,8 @@ jobs:
 
       - name: Run the AppController
         run: python main.py
+
+      - name: Debug file locations
+        run: |
+          pwd
+          ls -R
