@@ -20,6 +20,15 @@ jobs:
           pwd
           ls -al
           echo "Current path above. Confirming if requirements.txt is here."
+          
+      - name: Debug file structure
+        run: |
+          echo "Current working directory:"
+          pwd
+          echo "Root contents:"
+          ls -al
+          echo "Recursive listing:"
+          ls -R
 
       - name: Set up Python
         uses: actions/setup-python@v5
