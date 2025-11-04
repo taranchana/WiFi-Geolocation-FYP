@@ -26,4 +26,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run the AppController
+        working-directory: pythonFiles
         run: python main.py
