@@ -1,0 +1,13 @@
+# Core dependencies for WiFi GeoMapper Project
+
+# HTTP requests for WiGLE API access
+requests>=2.31.0
+
+# Mapping library for visualisation
+folium>=0.15.1
+
+# Optional helper for local .env credentials (safe to include)
+python-dotenv>=1.0.1
+
+# Optional for interactive notebooks or debugging
+ipython>=8.10.0
