@@ -1,0 +1,174 @@
+pi@whitehouse:~ $ sudo tshark -i wlan1
+Running as user "root" and group "root". This could be dangerous.
+Capturing on 'wlan1'
+ ** (tshark:1623) 18:51:33.661524 [Main MESSAGE] -- Capture started.
+ ** (tshark:1623) 18:51:33.711949 [Main MESSAGE] -- File: "/tmp/wireshark_wlan1OMSVE3.pcapng"
+    1 0.000000000 IntelCor_bf:e9:6f → Broadcast    802.11 174 Probe Request, SN=2551, FN=0, Flags=........, SSID="MI6GCHQ"
+    2 1.459167735 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=3896, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+    3 5.452712596 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=4020, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+    4 5.530245485 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 160 Data, SN=4025, FN=0, Flags=.p....F.
+    5 6.269960399 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=4048, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+    6 6.274480800 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=4050, FN=0, Flags=........, BI=100, SSID=000000000000000000
+    7 6.685648383 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=4062, FN=0, Flags=........, BI=100, SSID=000000000000000000
+    8 6.791949770 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=4067, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+    9 7.910788040 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=6, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   10 8.541121920 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 160 Data, SN=29, FN=0, Flags=.p....F.
+   11 9.753520908 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=73, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   12 9.961379893 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=80, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   13 10.263470160 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=87, FN=0, Flags=........, BI=100, SSID="TALKTALKFA6630"
+   14 17.743263929 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=331, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   15 30.718270275 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3218, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   16 30.907635815 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3223, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   17 30.923111067 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3224, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   18 30.938605226 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3225, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   19 31.153026229 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=752, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   20 32.605698289 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 238 Data, SN=803, FN=0, Flags=.p....F.
+   21 32.996212406 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=813, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   22 33.615210545 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=833, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   23 34.024800237 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=845, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   24 35.249053431 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=877, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   25 36.482418681 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=920, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   26 37.096845466 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=938, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   27 37.501788014 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=948, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   28 37.606176044 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=952, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   29 38.320989665 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=972, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   30 38.623091811 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 169 Data, SN=982, FN=0, Flags=.p....F.
+   31 38.630573248 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=986, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   32 39.449443376 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1012, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   33 39.754566562 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1020, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   34 39.961351587 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1027, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   35 40.988023881 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1058, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   36 41.625154561 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 169 Data, SN=1078, FN=0, Flags=.p....F.
+   37 41.627968701 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 160 Data, SN=1080, FN=0, Flags=.p....F.
+   38 41.707165029 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1086, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   39 41.802554745 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1087, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   40 41.906950938 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1091, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   41 41.945122970 32:2f:73:96:67:d1 → Broadcast    802.11 160 Probe Request, SN=51, FN=0, Flags=........, SSID=Wildcard (Broadcast)
+   42 41.949552199 32:2f:73:96:67:d1 → Broadcast    802.11 175 Probe Request, SN=52, FN=0, Flags=........, SSID="HOSTELATLANTIS 5Ghz"
+   43 41.953676951 32:2f:73:96:67:d1 → Broadcast    802.11 175 Probe Request, SN=54, FN=0, Flags=........, SSID="HOSTELATLANTIS 2.4G"
+   44 41.957476082 32:2f:73:96:67:d1 → Broadcast    802.11 175 Probe Request, SN=55, FN=0, Flags=........, SSID="HOSTELATLANTIS 5GHz"
+   45 42.416999427 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1109, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   46 42.623806848 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1116, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   47 42.931015873 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1125, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   48 43.033369281 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1128, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   49 43.238174847 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1134, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   50 43.341114925 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1137, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   51 47.086850621 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3278, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   52 47.102293344 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3279, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   53 50.877307066 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3284, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   54 50.892620107 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3285, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   55 50.908010231 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3286, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   56 50.960405547 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3287, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   57 51.942176928 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1412, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   58 52.247329447 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1420, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   59 52.249308232 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1421, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   60 52.966199559 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1444, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   61 53.273387132 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1453, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   62 53.480750120 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1460, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   63 53.580624512 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1462, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   64 53.661205217 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 169 Data, SN=1466, FN=0, Flags=.p....F.
+   65 53.668140417 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 238 Data, SN=1470, FN=0, Flags=.p....F.
+   66 53.887788402 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1478, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   67 54.092542403 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1484, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   68 54.397764862 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1492, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   69 54.399731563 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1493, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   70 54.707341353 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1503, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   71 55.324022956 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1523, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   72 55.626567649 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1530, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   73 55.733625011 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1535, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   74 55.938371742 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1541, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   75 56.755001631 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1569, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   76 56.959796706 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1575, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   77 57.164565844 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1581, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   78 57.267001534 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1584, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   79 57.369338426 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1587, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   80 57.781604355 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1600, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   81 58.599243478 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1623, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   82 59.317603569 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1645, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   83 59.417331638 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1647, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   84 59.679143036 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 238 Data, SN=1659, FN=0, Flags=.p....F.
+   85 60.138298664 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1674, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   86 60.648791902 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1689, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   87 61.115640611 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3291, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   88 61.130990900 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3292, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   89 61.146290252 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3293, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   90 61.200335217 ba:49:e8:31:04:40 → Broadcast    802.11 133 Probe Request, SN=3294, FN=0, Flags=........, SSID="TALKTALK_CD66FB"
+   91 61.463377565 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1711, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   92 61.770597256 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1722, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   93 61.772547657 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1723, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   94 61.980005258 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1730, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   95 62.080402550 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1732, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   96 62.180120421 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1734, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+   97 62.386987670 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1741, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+   98 62.389535774 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1742, FN=0, Flags=........, BI=100, SSID=000000000000000000
+   99 62.683073872 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 169 Data, SN=1749, FN=0, Flags=.p....F.
+  100 62.687255452 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 160 Data, SN=1752, FN=0, Flags=.p....F.
+  101 62.797320585 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1758, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  102 62.898972246 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1761, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  103 62.901542850 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1762, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  104 63.072662428 7e:8a:0d:66:8a:52 → Broadcast    802.11 160 Probe Request, SN=957, FN=0, Flags=........, SSID=Wildcard (Broadcast)
+  105 63.074221842 7e:8a:0d:66:8a:52 → Broadcast    802.11 175 Probe Request, SN=958, FN=0, Flags=........, SSID="HOSTELATLANTIS 5Ghz"
+  106 63.075223761 7e:8a:0d:66:8a:52 → Broadcast    802.11 178 Probe Request, SN=959, FN=0, Flags=........, SSID="Bristol Ales"
+  107 63.083070467 7e:8a:0d:66:8a:52 → Broadcast    802.11 175 Probe Request, SN=960, FN=0, Flags=........, SSID="HOSTELATLANTIS 2.4G"
+  108 63.084597069 7e:8a:0d:66:8a:52 → Broadcast    802.11 175 Probe Request, SN=961, FN=0, Flags=........, SSID="HOSTELATLANTIS 5GHz"
+  109 63.085513155 7e:8a:0d:66:8a:52 → Broadcast    802.11 171 Probe Request, SN=962, FN=0, Flags=........, SSID="BristolQ"
+  110 63.086604708 7e:8a:0d:66:8a:52 → Broadcast    802.11 180 Probe Request, SN=963, FN=0, Flags=........, SSID="Costa-Guest"
+  111 63.091138108 7e:8a:0d:66:8a:52 → Broadcast    802.11 176 Probe Request, SN=964, FN=0, Flags=........, SSID="EmbassyPlus"
+  112 63.092017112 7e:8a:0d:66:8a:52 → Broadcast    802.11 169 Probe Request, SN=965, FN=0, Flags=........, SSID="KpmgGuest"
+  113 63.092885073 7e:8a:0d:66:8a:52 → Broadcast    802.11 171 Probe Request, SN=966, FN=0, Flags=........, SSID="Orange-AACF"
+  114 63.093792097 7e:8a:0d:66:8a:52 → Broadcast    802.11 178 Probe Request, SN=967, FN=0, Flags=........, SSID="eduroam"
+  115 63.094678444 7e:8a:0d:66:8a:52 → Broadcast    802.11 168 Probe Request, SN=968, FN=0, Flags=........, SSID="_Aston Connect"
+  116 63.096660146 7e:8a:0d:66:8a:52 → Broadcast    802.11 160 Probe Request, SN=969, FN=0, Flags=........, SSID=Wildcard (Broadcast)
+  117 63.099172730 7e:8a:0d:66:8a:52 → Broadcast    802.11 175 Probe Request, SN=970, FN=0, Flags=........, SSID="HOSTELATLANTIS 5Ghz"
+  118 63.101166567 7e:8a:0d:66:8a:52 → Broadcast    802.11 178 Probe Request, SN=971, FN=0, Flags=........, SSID="Bristol Ales"
+  119 63.109032023 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1769, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  120 63.110493574 7e:8a:0d:66:8a:52 → Broadcast    802.11 175 Probe Request, SN=972, FN=0, Flags=........, SSID="HOSTELATLANTIS 2.4G"
+  121 63.114185731 7e:8a:0d:66:8a:52 → Broadcast    802.11 171 Probe Request, SN=974, FN=0, Flags=........, SSID="BristolQ"
+  122 63.116160298 7e:8a:0d:66:8a:52 → Broadcast    802.11 180 Probe Request, SN=975, FN=0, Flags=........, SSID="_Costa-Guest"
+  123 63.117983772 7e:8a:0d:66:8a:52 → Broadcast    802.11 176 Probe Request, SN=976, FN=0, Flags=........, SSID="EmbassyPlus"
+  124 63.120039901 7e:8a:0d:66:8a:52 → Broadcast    802.11 169 Probe Request, SN=977, FN=0, Flags=........, SSID="KpmgGuest"
+  125 63.121893480 7e:8a:0d:66:8a:52 → Broadcast    802.11 171 Probe Request, SN=978, FN=0, Flags=........, SSID="eduroam"
+  128 63.134253273 7e:8a:0d:66:8a:52 → Broadcast    802.11 160 Probe Request, SN=981, FN=0, Flags=........, SSID=Wildcard (Broadcast)
+  129 63.139353440 7e:8a:0d:66:8a:52 → Broadcast    802.11 175 Probe Request, SN=982, FN=0, Flags=........, SSID="HOSTELATLANTIS 5Ghz"
+  130 63.613811103 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1787, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  131 63.716150263 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1790, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  132 63.718157798 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1791, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  133 63.720766943 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1792, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  134 64.228175746 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1805, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  135 64.230132136 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1806, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  136 64.232722844 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1807, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  137 64.437528411 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1813, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  138 64.535329226 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1814, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  139 64.537349835 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1815, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  140 64.639762175 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1818, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  141 64.946985446 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1827, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  142 65.047341345 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1829, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  143 65.051962870 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1831, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  144 65.151743356 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1833, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  145 65.154342658 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1834, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  146 65.256722031 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1837, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  147 65.688515812 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 169 Data, SN=1850, FN=0, Flags=.p....F.
+  148 65.694666908 Arcadyan_8e:9a:55 → Spanning-tree-(for-bridges)_ef:03:fe 802.11 238 Data, SN=1854, FN=0, Flags=.p....F.
+  149 66.080352991 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1866, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  150 66.175761486 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1868, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  151 66.178334538 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1869, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  152 66.278136645 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1873, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  153 66.280738708 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1874, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  154 66.381125395 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1875, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  155 66.583352873 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1881, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  156 67.202384530 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1903, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  157 67.300126138 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1904, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  158 67.302153778 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1905, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  159 67.404571495 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1907, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  160 67.709800129 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1916, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  161 67.711744697 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1917, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  162 67.714355509 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1918, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  163 67.812124566 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1919, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  164 67.814118820 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1920, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  165 68.016993332 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1925, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  166 68.018924254 7a:b6:87:8e:9a:50 → Broadcast    802.11 243 Beacon frame, SN=1926, FN=0, Flags=........, BI=100, SSID="_Costa-Guest"
+  167 68.123953147 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1930, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  168 68.232485919 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1933, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  169 68.529571453 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1940, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
+  170 68.534239958 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1942, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  171 68.635945027 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1947, FN=0, Flags=........, BI=100, SSID=000000000000000000
