@@ -1,0 +1,50 @@
+# =============================
+#  WiFi GeoMapper Project
+#  Git Ignore Configuration
+# =============================
+
+# --- Python general ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# --- Virtual environments ---
+venv/
+.env/
+.env.bak
+env/
+venv.bak/
+
+# --- Jupyter or notebook caches ---
+.ipynb_checkpoints/
+
+# --- System files (Windows/macOS) ---
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# --- IDE and editor configs ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Logs and temporary output ---
+*.log
+*.tmp
+*.bak
+
+# --- Mapping outputs ---
+*.html
+*.json
+
+# --- Data and test capture files ---
+data/
+*.pcap
+*.txt
+
+# --- Backup / archive files ---
+*.zip
+*.tar
+*.gz
