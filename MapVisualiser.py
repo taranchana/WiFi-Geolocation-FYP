@@ -1,21 +1,18 @@
 import folium
 
 class MapVisualiser:
-    """
-    Visualises SSID location data on an interactive map using Folium.
-    """
+    def __init__(self):
+        self.map = folium.Map(location=[51.5074, -0.1278], zoom_start=6)  # Default: London-ish
 
-    def display_map(self, mapped_data):
-        print("[MapVisualiser] Generating map...")
-        map_obj = folium.Map(location=[52.4862, -1.8904], zoom_start=12)
+    def plot_points(self, locations):
+        """Add markers for all known SSID locations."""
+        for loc in locations:
+            folium.Marker(
+                [loc["lat"], loc["lon"]],
+                popup=f'SSID: {loc["ssid"]}',
+                icon=folium.Icon(color="blue", icon="wifi", prefix="fa")
+            ).add_to(self.map)
 
-        for entry in mapped_data:
-            if entry["lat"] and entry["lon"]:
-                folium.Marker(
-                    [entry["lat"], entry["lon"]],
-                    popup=entry["ssid"],
-                    icon=folium.Icon(color="blue", icon="wifi", prefix="fa")
-                ).add_to(map_obj)
-
-        map_obj.save("WiFiGeoMap.html")
-        print("[MapVisualiser] Map saved as WiFiGeoMap.html")
+    def save_map(self, filename="WiFiGeoMap.html"):
+        self.map.save(filename)
+        print(f"[MapVisualiser] Map saved as {filename}")
