@@ -15,10 +15,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Debug file locations
+      - name: Debug files
         run: |
           pwd
-          ls -R
+          ls -al
+          echo "Current path above. Confirming if requirements.txt is here."
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,9 +27,11 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
+        working-directory: ./  #  use the repo root
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run WiFi GeoMapper
+        working-directory: ./  # run from repo root
         run: python main.py
