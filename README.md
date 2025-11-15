@@ -1,24 +1,53 @@
 # WiFi-Geolocation-FYP
-WiFi Geo Mapping is a Python proof-of-concept that captures Wi-Fi Probe Requests, extracts SSIDs, and visualises them on real maps. Built with tcpdump and modular design, it demonstrates how SSIDs can link to locations while emphasising privacy: all tests use only synthetic or self-produced data.
+WiFi Geo Mapping is a Python proof-of-concept that captures Wi-Fi Probe Requests, extracts SSIDs, and visualises them on real maps. Built with enhanced filtering, individual map generation, and comprehensive logging. It demonstrates how SSIDs can link to locations while emphasising privacy: all tests use only synthetic or self-produced data.
 
 **Important:** All experiments and demonstrations use **synthetic/dummy datasets only**. No real third-party data is collected.
 
 ---
 
 ## Features
-- Capture Wi-Fi Probe Requests (via `tcpdump`).
-- Extract SSID information from probe requests.
-- Map SSIDs to locations using a geolocation API or mock dataset.
-- Visualise results on an **interactive map**.
-- Ethical-by-design: prototype capable of live capture but **restricted to synthetic/self-produced data only**.
+- **Enhanced SSID Filtering:** Advanced validation to filter out illogical, placeholder, or invalid SSIDs
+- **Individual Map Generation:** Creates separate timestamped maps for each successful WiGLE API hit
+- **Improved Naming Convention:** Maps named with format `WiFiGeoMap_{SSID}_{timestamp}.html`
+- **Comprehensive Logging:** Detailed session logs tracking filtering, API queries, and map generation
+- **Batch Processing:** Processes all valid SSIDs from capture data automatically
+- **Data Validation:** Validates coordinates and filters suspicious location data
+- **Summary Statistics:** Provides detailed success rates and processing summaries
+
+### Core Functionality
+- Capture Wi-Fi Probe Requests (via `tcpdump`)
+- Extract SSID information from probe requests with advanced filtering
+- Map SSIDs to locations using WiGLE API with caching
+- Generate individual maps for each successful location query
+- Create summary maps showing all discovered locations
+- Comprehensive session logging and data validation
 
 ---
+
+## New Directory Structure
+```
+data/
+├── wifi-ssid-captures.txt      # Input capture data
+├── wigle_cache.json            # API response cache (includes failed lookups)
+├── maps/                       # Individual and summary maps directory
+│   ├── WiFiGeoMap_{SSID}_{timestamp}.html  # Individual maps
+│   └── Full Map/               # Summary maps subfolder
+│       └── WiFiGeoMap_all_locations.html   # Master summary map
+└── logs/                       # Session logs
+    ├── processing_log_{timestamp}.json
+    └── ...
+```
 
 ## Tech Stack
 - **Language:** Python 3
 - **Capture:** `tcpdump`, or PCAP file imports
-- **Libraries:** Scapy / pyshark for packet parsing, requests for API calls, Tkinter/PyQt or Flask for GUI
-- **Mapping:** OpenStreetMap, Leaflet.js, or Google Maps embed
+- **Libraries:** 
+  - `folium` for interactive map generation
+  - `requests` for WiGLE API calls
+  - `json` for caching and logging
+  - `datetime` for timestamping
+  - `pathlib` for file management
+- **Mapping:** Folium with OpenStreetMap tiles
 
 ---
 
