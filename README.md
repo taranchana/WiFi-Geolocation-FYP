@@ -24,20 +24,6 @@ WiFi Geo Mapping is a Python proof-of-concept that captures Wi-Fi Probe Requests
 
 ---
 
-## New Directory Structure
-```
-data/
-├── wifi-ssid-captures.txt      # Input capture data
-├── wigle_cache.json            # API response cache (includes failed lookups)
-├── maps/                       # Individual and summary maps directory
-│   ├── WiFiGeoMap_{SSID}_{timestamp}.html  # Individual maps
-│   └── Full Map/               # Summary maps subfolder
-│       └── WiFiGeoMap_all_locations.html   # Master summary map
-└── logs/                       # Session logs
-    ├── processing_log_{timestamp}.json
-    └── ...
-```
-
 ## Tech Stack
 - **Language:** Python 3
 - **Capture:** `tcpdump`, or PCAP file imports
