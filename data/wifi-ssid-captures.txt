@@ -172,3 +172,4 @@ Capturing on 'wlan1'
   169 68.529571453 Arcadyan_8e:9a:57 → Broadcast    802.11 332 Beacon frame, SN=1940, FN=0, Flags=........, BI=100, SSID="BT-9CAA6H"
   170 68.534239958 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1942, FN=0, Flags=........, BI=100, SSID=000000000000000000
   171 68.635945027 7a:b6:87:8e:9a:53 → Broadcast    802.11 317 Beacon frame, SN=1947, FN=0, Flags=........, BI=100, SSID=000000000000000000
+  172 68.635945027 7a:b6:87:8e:9a:53 → Broadcast    802.11 400 Beacon frame, SN=1948, FN=0, Flags=........, BI=100, SSID="ECNU"
