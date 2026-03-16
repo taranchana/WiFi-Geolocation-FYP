@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 class MapVisualiser:
-    def __init__(self, default_location=[51.5074, -0.1278], default_zoom=6):
+    def __init__(self, default_location=[20, 0], default_zoom=6):
         """
         Initialize MapVisualiser with configurable defaults.
         default_location: [lat, lon] for initial map center (default: London)
@@ -16,51 +16,67 @@ class MapVisualiser:
 
     def create_map(self, locations=None):
         """
-        Create a new map, optionally centered on provided locations.
-        If locations provided, center on them; otherwise use default location.
+        Create a new map.
+        If locations are tightly grouped, centre on them.
+        If locations are globally spread, use a fixed world view.
         """
         if locations and len(locations) > 0:
-            # Calculate center point from all locations
-            avg_lat = sum(loc["lat"] for loc in locations) / len(locations)
-            avg_lon = sum(loc["lon"] for loc in locations) / len(locations)
-            center = [avg_lat, avg_lon]
-            
-            # Determine appropriate zoom level based on location spread
             if len(locations) == 1:
-                zoom = 15  # Close zoom for single location
+                center = [locations[0]["lat"], locations[0]["lon"]]
+                zoom = 15
             else:
-                # Calculate rough distance spread to determine zoom
                 lat_spread = max(loc["lat"] for loc in locations) - min(loc["lat"] for loc in locations)
                 lon_spread = max(loc["lon"] for loc in locations) - min(loc["lon"] for loc in locations)
                 max_spread = max(lat_spread, lon_spread)
-                
-                if max_spread < 0.01:    # Very close locations
-                    zoom = 14
-                elif max_spread < 0.1:   # City-level spread
-                    zoom = 11
-                elif max_spread < 1:     # Regional spread
-                    zoom = 8
-                else:                    # Country/continent level
-                    zoom = 6
+
+                # If points are globally spread, use a balanced world view
+                if max_spread > 20:
+                    center = [20, 0]
+                    zoom = 2
+                else:
+                    avg_lat = sum(loc["lat"] for loc in locations) / len(locations)
+                    avg_lon = sum(loc["lon"] for loc in locations) / len(locations)
+                    center = [avg_lat, avg_lon]
+
+                    if max_spread < 0.01:
+                        zoom = 14
+                    elif max_spread < 0.1:
+                        zoom = 11
+                    elif max_spread < 1:
+                        zoom = 8
+                    else:
+                        zoom = 6
         else:
             center = self.default_location
             zoom = self.default_zoom
-        
-        self.map = folium.Map(location=center, zoom_start=zoom, tiles="CartoDB positron")
+
+        self.map = folium.Map(
+            location=center,
+            zoom_start=zoom,
+            tiles="CartoDB positron"
+        )
         return self.map
 
     def plot_points(self, locations):
         """Add markers for all known SSID locations."""
         if not self.map:
             self.create_map(locations)
-            
+
+        bounds = []
+
         for loc in locations:
+            coords = [loc["lat"], loc["lon"]]
+            bounds.append(coords)
+
             folium.Marker(
-                [loc["lat"], loc["lon"]],
+                coords,
                 popup=f'SSID: {loc["ssid"]}<br>Lat: {loc["lat"]:.6f}<br>Lon: {loc["lon"]:.6f}',
                 tooltip=f'SSID: {loc["ssid"]}',
                 icon=folium.Icon(color="blue", icon="wifi", prefix="fa")
             ).add_to(self.map)
+
+        if bounds:
+            self.map.fit_bounds(bounds)
 
     def save_map(self, filename="WiFiGeoMap.html"):
         """Save the current map to file."""
@@ -129,15 +145,18 @@ class MapVisualiser:
         if not all_locations:
             print("[MapVisualiser] No locations to create summary map")
             return None
-            
-        filename = f"WiFiGeoMap_all_locations.html"
+
+        filename = "WiFiGeoMap_all_locations.html"
         filepath = Path(output_dir) / filename
-        
-        # Create map and plot all points
-        self.create_map(all_locations)
+
+        # Force a balanced global view for the summary map
+        self.map = folium.Map(
+            location=[20, 0],
+            zoom_start=2,
+            tiles="CartoDB positron"
+        )
         self.plot_points(all_locations)
-        
-        # Save the summary map
+
         if self.save_map(str(filepath)):
             return str(filepath)
         return None
