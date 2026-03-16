@@ -46,7 +46,7 @@ class MapVisualiser:
             center = self.default_location
             zoom = self.default_zoom
         
-        self.map = folium.Map(location=center, zoom_start=zoom)
+        self.map = folium.Map(location=center, zoom_start=zoom, tiles="CartoDB positron")
         return self.map
 
     def plot_points(self, locations):
@@ -91,8 +91,9 @@ class MapVisualiser:
         
         # Create map centered on this location
         single_location_map = folium.Map(
-            location=[location_data["lat"], location_data["lon"]], 
-            zoom_start=15
+            location=[location_data["lat"], location_data["lon"]],
+            zoom_start=15,
+            tiles="CartoDB positron"
         )
         
         # Add marker for this location
