@@ -136,7 +136,7 @@ class DataValidator:
             return None
 
     def print_session_summary(self):
-        """Print a human-readable session summary."""
+        """Print a readable session summary."""
         summary = self.get_processing_summary()
         
         print("\n" + "="*60)

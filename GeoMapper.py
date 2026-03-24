@@ -69,7 +69,7 @@ class GeoMapper:
         if not ssid:
             return None
 
-        # Check if we have this SSID in cache (successful or failed)
+        # Check if this SSID in cache (successful or failed)
         if ssid in self.cache:
             cached_result = self.cache[ssid]
             
