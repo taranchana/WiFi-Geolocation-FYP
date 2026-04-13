@@ -15,7 +15,7 @@ WiFi Geo Mapping is a Python proof-of-concept that captures Wi-Fi Probe Requests
 - **Summary Statistics:** Provides detailed success rates and processing summaries
 
 ### Core Functionality
-- Capture Wi-Fi Probe Requests (via `tcpdump`)
+- Capture Wi-Fi Probe Requests (via `tshark`)
 - Extract SSID information from probe requests with advanced filtering
 - Map SSIDs to locations using WiGLE API with caching
 - Generate individual maps for each successful location query
@@ -26,7 +26,7 @@ WiFi Geo Mapping is a Python proof-of-concept that captures Wi-Fi Probe Requests
 
 ## Tech Stack
 - **Language:** Python 3
-- **Capture:** `tcpdump`, or PCAP file imports
+- **Capture:** `tshark`
 - **Libraries:** 
   - `folium` for interactive map generation
   - `requests` for WiGLE API calls
@@ -42,16 +42,6 @@ WiFi Geo Mapping is a Python proof-of-concept that captures Wi-Fi Probe Requests
 - No real user/device data is collected.
 - Synthetic captures are generated via controlled tests (e.g., connecting personal devices to fake SSIDs).
 - The prototype can technically capture real data, but this feature is not used in this project.
-
----
-
-## Timeline
-
-- Literature review & background research
-- Tool design (CaptureManager, SSIDExtractor, GeoMapper, MapGUI)
-- Implementation (synthetic data only)
-- Evaluation & ethics review
-- Final demo + report
 
 ---
 
