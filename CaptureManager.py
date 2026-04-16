@@ -3,7 +3,7 @@ import os
 class CaptureManager:
     """
     Handles loading of Wi-Fi capture data from text files or logs.
-    Used to read TShark or tcpdump output containing SSID information.
+    Used to read TShark output containing SSID information.
     """
 
     def __init__(self, file_path: str):
