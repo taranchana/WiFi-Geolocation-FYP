@@ -92,15 +92,15 @@ def main():
     # Step 4: Generate final summary map and open it
     print("\n[App] Generating final summary map...")
     visualiser = MapVisualiser()
-    visualiser.create_map(mapped_locations)
-    visualiser.plot_points(mapped_locations)
-    
-    summary_map_path = Path("data/maps/Full Map/WiFiGeoMap_all_locations.html")
-    if visualiser.save_map(summary_map_path):
+    summary_map_path = visualiser.create_summary_map(
+        mapped_locations,
+        total_ssids=len(ssids)
+    )
+    if summary_map_path:
         validator.log_map_generation(summary_map_path, "summary")
         print(f"[App] Summary map generated successfully: {summary_map_path}")
         print("[App] Opening summary map in your default browser...\n")
-        webbrowser.open(summary_map_path.resolve().as_uri())
+        webbrowser.open(Path(summary_map_path).resolve().as_uri())
 
     # Step 5: Save session log and display statistics
     log_file = validator.save_session_log()

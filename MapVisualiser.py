@@ -137,9 +137,53 @@ class MapVisualiser:
             print(f"[MapVisualiser] Error saving individual map: {e}")
             return None
 
-    def create_summary_map(self, all_locations, output_dir="data/maps/Full Map"):
+    def _add_legend(self, folium_map, all_locations, total_ssids=None):
+        """
+        Inject a statistics and explanation legend panel into the map HTML.
+        Addresses NFR4: map must be interpretable without technical background.
+        """
+        located = len(all_locations)
+        total = total_ssids if total_ssids else located
+        hit_rate = (located / total * 100) if total > 0 else 0
+
+        legend_html = f"""
+        <div style="
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            z-index: 1000;
+            background-color: white;
+            border: 2px solid #444;
+            border-radius: 8px;
+            padding: 14px 18px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+            max-width: 260px;
+            line-height: 1.5;
+        ">
+            <b style="font-size:14px;"> Wi-Fi Geo-Map</b>
+            <hr style="margin: 6px 0; border-color: #ccc;">
+            <b>What this shows:</b><br>
+            Each marker is a Wi-Fi network (SSID) whose name was matched in the
+            WiGLE crowdsourced database, revealing an approximate location where
+            that network has previously been observed, captured passively from
+            a single device.
+            <hr style="margin: 6px 0; border-color: #ccc;">
+            <b>Session Statistics:</b><br>
+            SSIDs located: <b>{located}</b><br>
+            SSIDs captured: <b>{total}</b><br>
+            Geolocation rate: <b>{hit_rate:.1f}%</b>
+            <hr style="margin: 6px 0; border-color: #ccc;">
+            <span style="color:#2874a6;">&#11044;</span> Located Wi-Fi network<br>
+        </div>
+        """
+        folium_map.get_root().html.add_child(folium.Element(legend_html))
+
+    def create_summary_map(self, all_locations, output_dir="data/maps/Full Map", total_ssids=None):
         """
         Create a summary map showing all successful locations.
+        Includes a legend and statistics panel to satisfy NFR4.
         Returns the path to the saved summary map.
         """
         if not all_locations:
@@ -156,6 +200,9 @@ class MapVisualiser:
             tiles="CartoDB positron"
         )
         self.plot_points(all_locations)
+
+        # Add legend and statistics panel (addresses NFR4)
+        self._add_legend(self.map, all_locations, total_ssids=total_ssids)
 
         if self.save_map(str(filepath)):
             return str(filepath)
