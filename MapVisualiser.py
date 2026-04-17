@@ -53,7 +53,9 @@ class MapVisualiser:
         self.map = folium.Map(
             location=center,
             zoom_start=zoom,
-            tiles="CartoDB positron"
+            tiles="CartoDB positron",
+            max_bounds=True,
+            min_zoom=2
         )
         return self.map
 
@@ -162,12 +164,12 @@ class MapVisualiser:
             max-width: 260px;
             line-height: 1.5;
         ">
-            <b style="font-size:14px;"> Wi-Fi Geo-Map</b>
+            <b style="font-size:14px;">Wi-Fi Geo-Map</b>
             <hr style="margin: 6px 0; border-color: #ccc;">
             <b>What this shows:</b><br>
             Each marker is a Wi-Fi network (SSID) whose name was matched in the
             WiGLE crowdsourced database, revealing an approximate location where
-            that network has previously been observed, captured passively from
+            that network has previously been observed — captured passively from
             a single device.
             <hr style="margin: 6px 0; border-color: #ccc;">
             <b>Session Statistics:</b><br>
@@ -176,6 +178,7 @@ class MapVisualiser:
             Geolocation rate: <b>{hit_rate:.1f}%</b>
             <hr style="margin: 6px 0; border-color: #ccc;">
             <span style="color:#2874a6;">&#11044;</span> Located Wi-Fi network<br>
+            <small style="color:#666;">No marker = SSID not found in WiGLE DB</small>
         </div>
         """
         folium_map.get_root().html.add_child(folium.Element(legend_html))
@@ -197,8 +200,15 @@ class MapVisualiser:
         self.map = folium.Map(
             location=[20, 0],
             zoom_start=2,
-            tiles="CartoDB positron"
+            tiles=None,
+            max_bounds=True,
+            min_zoom=2
         )
+        # Add tile layer with no_wrap=True to prevent the map repeating horizontally
+        folium.TileLayer(
+            tiles="CartoDB positron",
+            no_wrap=True
+        ).add_to(self.map)
         self.plot_points(all_locations)
 
         # Add legend and statistics panel (addresses NFR4)
