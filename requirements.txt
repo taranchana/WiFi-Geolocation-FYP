@@ -6,8 +6,8 @@ requests>=2.31.0
 # Mapping library for visualisation
 folium>=0.15.1
 
-# Optional helper for local .env credentials (safe to include)
+# Load API credentials from .env file
 python-dotenv>=1.0.1
 
-# Optional for interactive notebooks or debugging
-ipython>=8.10.0
+# Upload server for receiving capture files from remote devices
+flask>=3.0.0
