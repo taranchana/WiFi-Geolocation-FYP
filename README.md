@@ -24,16 +24,105 @@ WiFi Geo Mapping is a Python proof-of-concept that captures Wi-Fi Probe Requests
 
 ---
 
+## Prerequisites
+- Python 3.9+
+- [`tshark`](https://www.wireshark.org/docs/man-pages/tshark.html) (part of Wireshark) — required if capturing live probe requests
+- A [WiGLE](https://wigle.net/) account with API credentials
+
+---
+
+## WiGLE API Key Setup
+This project uses the [WiGLE network search API](https://api.wigle.net/) to resolve SSID locations. You will need a free account at [wigle.net](https://wigle.net/) to obtain credentials.
+
+Once logged in, find your credentials under **My Account → API Token**. You need both your **API Name** and **API Token**.
+
+### Setting up your environment variable
+Create a `.env` file in the project root:
+```
+WIGLE_API_NAME=your_api_name_here
+WIGLE_API_TOKEN=your_api_token_here
+```
+
+The project loads these automatically via `python-dotenv`. If either variable is missing, the app falls back to **mock mode** — it skips all WiGLE queries but still runs the rest of the pipeline, which is useful for testing.
+
+> **Important:** Never commit your `.env` file. Add it to `.gitignore`:
+> ```
+> echo ".env" >> .gitignore
+> ```
+
+---
+
+## Installation
+```bash
+# Clone the repository
+git clone <your-repo-url>
+cd WiFi-Geolocation-FYP
+
+# Create and activate a virtual environment
+python -m venv venv
+
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Create your .env file with WiGLE credentials (see above)
+```
+
+---
+
+## Running the Project
+```bash
+python main.py
+```
+This will load `data/wifi-ssid-captures.txt`, extract and filter SSIDs, query WiGLE for each one (with an 8-second delay between calls to respect rate limits), generate maps, and open the summary map in your browser.
+
+### Optional: Upload server
+If you want to push a capture file from a remote device (e.g. a Raspberry Pi running `tshark`), start the Flask upload server:
+```bash
+python upload_server.py
+```
+Then POST a file to it from your capture device:
+```bash
+curl -X POST -F "file=@your_capture.txt" http://<server-ip>:5000/upload
+```
+
+---
+
+## Capture Data Format
+The input file (`data/wifi-ssid-captures.txt`) should have one entry per line with SSIDs in the format:
+```
+SSID="NetworkName"
+```
+To generate this with `tshark` (requires a wireless adapter in monitor mode):
+```bash
+tshark -i <interface> -Y "wlan.fc.type_subtype == 0x04" -T fields -e wlan_mgt.ssid > data/wifi-ssid-captures.txt
+```
+
+---
+
 ## Tech Stack
 - **Language:** Python 3
 - **Capture:** `tshark`
-- **Libraries:** 
+- **Libraries:**
   - `folium` for interactive map generation
   - `requests` for WiGLE API calls
+  - `python-dotenv` for loading API credentials from `.env`
   - `json` for caching and logging
   - `datetime` for timestamping
   - `pathlib` for file management
 - **Mapping:** Folium with OpenStreetMap tiles
+
+---
+
+## Output
+- **Individual maps** → `data/maps/WiFiGeoMap_{SSID}_{timestamp}.html`
+- **Summary map** → `data/maps/Full Map/WiFiGeoMap_all_locations.html`
+- **WiGLE cache** → `data/wigle_cache.json` (avoids re-querying known SSIDs)
+- **Session logs** → `data/logs/processing_log_{timestamp}.json`
 
 ---
 
