@@ -55,7 +55,7 @@ The project loads these automatically via `python-dotenv`. If either variable is
 ## Installation
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/taranchana/WiFi-Geolocation-FYP
 cd WiFi-Geolocation-FYP
 
 # Create and activate a virtual environment
