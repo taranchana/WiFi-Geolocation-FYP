@@ -3,6 +3,10 @@ WiFi Geo Mapping is a Python proof-of-concept that captures Wi-Fi Probe Requests
 
 **Important:** All experiments and demonstrations use **synthetic/dummy datasets only**. No real third-party data is collected.
 
+This is an educational research prototype demonstrating Wi-Fi SSID geolocation as a privacy-awareness tool. It uses only synthetic and self-generated data. 
+
+**Important:** Do not use this code to monitor third-party devices or networks without explicit consent. Doing so may violate UK GDPR and equivalent regulations.
+
 ---
 
 ## Features
